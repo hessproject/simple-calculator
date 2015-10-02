@@ -1,0 +1,61 @@
+body
+  div(ng-app="calcApp")
+    div(ng-controller="calcController")
+      div.container
+        div.row
+          div.col-xs-12
+              h1
+               {{ display }}
+            div.col-xs-12
+              table
+                tr
+                  td
+                    button.btn.btn-info(ng-click="buttonPress('7')") 7
+                  td
+                    button.btn.btn-info(ng-click="buttonPress('8')") 8
+                  td 
+                    button.btn.btn-info(ng-click="buttonPress('9')") 9
+                  td
+                    button.btn.btn-warning(ng-click=("buttonPress('+')")) +
+                tr
+                  td
+                    button.btn.btn-info(ng-click="buttonPress('4')") 4
+                  td
+                    button.btn.btn-info(ng-click="buttonPress('5')") 5
+                  td
+                    button.btn.btn-info(ng-click="buttonPress('6')") 6
+                  td
+                    button.btn.btn-warning(ng-click="buttonPress('-')") -
+                tr
+                  td
+                    button.btn.btn-info(ng-click="buttonPress('1')") 1
+                  td
+                    button.btn.btn-info(ng-click="buttonPress('2')") 2
+                  td
+                    button.btn.btn.btn-info(ng-click="buttonPress('3')") 3
+                  td
+                    button.btn.btn-warning(ng-click="buttonPress('*')") x
+                tr
+                  td
+                    button.btn.btn-info(ng-click="buttonPress('0')") 0
+                  td
+                    button.btn.btn-info(ng-click="buttonPress('.')") . 
+                  td
+                    button.btn.btn-danger(ng-click="equals()") =
+
+                  td
+                    button.btn.btn-warning(ng-click="buttonPress('/')") /
+                tr
+                  td(colspan=2)
+                    h4 Decimal Places:
+                      select#decimalplaces
+                        option 0
+                        option 1
+                        option(selected = "selected") 2
+                        option 3
+                        option 4
+                        option 5
+                  td
+                    button.btn.btn-primary(ng-click="backspace()") Backspace
+                  td
+                    button.btn.btn-primary(ng-click="clear()") Clear
